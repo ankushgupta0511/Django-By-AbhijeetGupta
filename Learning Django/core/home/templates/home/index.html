@@ -1,0 +1,70 @@
+{% extends "home/base.html" %}
+
+{% block start %}
+
+    <div class="container">
+        <h1>This is Send Email</h1>
+
+        <a href="{% url 'send_email' %}" class="btn btn-success">Send Email</a>
+    </div>
+
+    <br>
+
+
+    <table class="container mt-5">
+        <tr>
+            <th>S. no</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>can Vote</th>
+        </tr>
+
+        {% for people in peoples %}
+
+        <tr>
+            <th>{{forloop.counter}}</th>
+            <th>{{people.name}}</th>
+            <th>{{people.age}}</th>
+            <th {% if people.age < 18 %} style='background:red;' {% endif %} >
+
+                    {% if people.age >= 18 %}
+                    <p>Eligible</p>
+                    {% else %}
+                    <p>Not Eligible</p>
+                    
+                    {% endif %}
+
+            </th>
+        </tr>
+
+        {% endfor %}
+
+
+
+    </table>
+
+
+    <br>
+    <br>    
+    <!-- new concepts -->
+    
+    <div>{{text|truncatechars:10 }}</div>   <!-- it show only upto 10 charactors bcz of  truncatechars  -->
+    
+    
+
+    <br>
+    <br>
+    <!-- new concsepts -->
+    
+    <div>
+        {% if 'A' in vegetable %}
+        <p>'A' present</p>
+
+        {% else %}
+        <p>not present</p>
+
+        {% endif %}
+
+    </div>
+
+{% endblock %}
