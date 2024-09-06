@@ -1,6 +1,6 @@
 
 
-
+//  this code you can take from it's official documentation
 ```
 # pip install virtualenv
 ```
@@ -27,6 +27,7 @@
 # django-admin startproject core   
 ```
 
+
 ```
 #  python manage.py startapp home
 ```
@@ -44,6 +45,14 @@ server port can change and run on port http://127.0.0.1:8000/
 # python manage.py runserver 0.0.0.0:5000
 ```
 
+
+
+// command for checking django installed or not
+```
+python 
+import django
+django.__version__ 
+```
 
 
 ```
@@ -95,7 +104,7 @@ it give index of forloop
 
 1)
 // data create and store in student variables
-# student = Student(name='ankush',age=18,email='ankushgupta0510@gmail.com,address='gandhinagarbhopal')
+# student = Student(name='ankush',age=18,email='ankushgupta0510@gmail.com',address='gandhinagarbhopal')
 
 // data save
 # >>> student.save()
@@ -114,6 +123,7 @@ it give index of forloop
 # Student.objects.all()[0].age   
 # Student.objects.all()[0].email   
 # Student.objects.all()[0].address   
+
 
 
 // below code print all data store in Student
@@ -136,7 +146,7 @@ car name is neno and the speed is 150
 car name is cys and the speed is 160
 car name is cys and the speed is 160
 
-```'
+```
 
 
 
@@ -153,7 +163,7 @@ car name is cys and the speed is 160
 
 // filter also find data but it not generat error in case of not present data in sqlite
 # car = Car.objects.filter(id=1)
- ```'
+ ```
 
 
 // project vege
@@ -162,10 +172,13 @@ car name is cys and the speed is 160
 # python -m pip install Pillow
 ```
 
+
 ```
 //  import it in form tag bcz it help to upload the image
 # enctype="multipart/form-data"
 ```
+
+
 
 ```
 
@@ -192,6 +205,7 @@ Car.objects.get()
 Car.objects.filter()
 
 ```
+
 
 ```
 #### immportant NOTE :-
@@ -258,6 +272,9 @@ MEDIA_URL = '/media/'
 
 #### import bellow all code in urls.py of core apps
 
+
+from django.conf.urls.static import static
+from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns  // import in header
 
 
@@ -274,19 +291,26 @@ urlpatterns += staticfiles_urlpatterns()
 
 
 
+#### some useful concepts
 ```
-##### some useful concepts
-
-
-it show only those characters which you mentioned 
-# truncatechars
+// it show only those characters which you mentioned 
+ truncatechars
 ```
 
-
-
-
+#### important request method
 ```
+// it fetch data of post method
+if request.method == "POST":
+        data = request.POST
+
+
+// it fetch data of Get method
+request.GET.get('seach')
+```
+
+
 #### videio  13 command  advanced queries part 1
+```
 
 1) 
 >>> from vege.models import *
