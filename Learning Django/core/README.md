@@ -1,4 +1,11 @@
 
+### important command it remove all problem of power shell
+```
+// Run following command in Windows Powershell ISE  in our system
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+
 
 //  this code you can take from it's official documentation
 ```
